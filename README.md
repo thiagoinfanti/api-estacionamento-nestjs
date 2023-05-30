@@ -1,69 +1,34 @@
-![Dr Consulta](https://drconsulta.com/_next/image?url=%2Fimages%2FLogo-Dr-Consulta-Branco.png&w=128&q=100 "DrConsulta")
-
-*"Salvar vidas e cuidar das pessoas porque elas não podem esperar nas filas da saúde."*
-Conheça: www.drconsulta.com
-
-## Objetivo
-O teste é destinado para vaga de Desenvolvedor Back-end entendo como o candidato efetuou a solução e o raciocinio de criação
-
 ## Project - API
-Criar uma API REST para gerenciar um estacionamento de carros e motos.
+API REST para gerenciar um estacionamento de carros e motos.
 
 #### Stack tecnológica
 - NestJS
 - TypeOrm
 - Mysql
 - Swagger
+- Arquitetura Hexagonal
 
-#### Cadastro de estabelecimento
-Criar um cadastro da empresa com os seguintes campos:
-- Nome;
-- CNPJ;
-- Endereço;
-- Telefone;
-- Quantidade de vagas para motos;
-- Quantidade de vagas para carros.
-- 
-**Todos** os campos são de preenchimento obrigatório.
+#### Instalação
+- Clone o repositório em uma pasta do seu computador
+- Tenha o docker e o docker compose configurado
+- Caso tenha a versão 1 do docker compose execute o comando **docker-compose up -d**
+- Caso tenha a versão 2 do docker compose execute o comando **docker compose up -d**
 
-#### Cadastro de veículos
-Criar um cadastro de veículos com os seguintes campos:
-- Marca;
-- Modelo;
-- Cor;
-- Placa;
-- Tipo.
-- 
-**Todos** os campos são de preenchimento obrigatório.
+#### Executando testes unitários
+- Entrando no bash do container de app versão 1 docker compose **docker-compose exec app sh**
+- Entrando no bash do container de app versão 2 docker compose **docker compose exec app sh**
+- Execute o comando **npm run test:unit**
 
-#### Funcionalidades
-- **Estabelecimento:** CRUD;
-- **Veículos:** CRUD;
-- **Controle de entrada e saída de veículos.**
+#### Acessando a documentação e testes da API
+- acesse **http://loclalhost:3000/api**
 
-#### Requisitos
-- Controle JWT via Handshake
-- Modelagem de dados;
-- O retorno deverá ser em formato JSON;
-- Requisições GET, POST, PUT ou DELETE, conforme a melhor prática;
-- A persistência dos dados deverá ser em banco *relacional MYSQL*
-- Criar README do projeto descrevendo as tecnologias utilizadas, chamadas dos serviços e configurações necessário para executar a aplicação.
-   
-#### Ganha mais pontos
-- Sumário da quantidade de entrada e saída;
-- Sumário da quantidade de entrada e saída de veículos por hora;
-- Criação relatórios para visão ao dono do estabelecimento;
-- Desenvolver utilizando TDD;
+#### Autenticação
+- acesse **http://loclalhost:3000/auth** informando no corpo do body
+{
+    "username": "user",
+    "password": "123456"
+}
+você receberá um token JWT como resposta
 
-## DevOps (Diferencial)
-Efetuar deploy da nossa API no ambiente do Google Cloud Platform utilizando os serviços
+Caso queira alterar alguma configurações da API, edite o arquivo **.env** na raiz do projeto
 
-#### Serviços do GCP
-- Container Registry (Subir a imagem docker)
-- Cloud Run
-
-## Submissão
-Crie um fork do teste para acompanharmos o seu desenvolvimento através dos seus commits.
-
-## Obrigado!
-Agradecemos sua participação no teste. Boa sorte! 😄
