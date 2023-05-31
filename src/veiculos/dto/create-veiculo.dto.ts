@@ -1,24 +1,34 @@
-import { ApiProperty } from "@nestjs/swagger";
 import {IsNotEmpty} from "class-validator";
 import { IsValidVehicleType } from "src/helpers/decorators/IsValidVehicleType.decorator";
 export class CreateVeiculoDto {
-    @ApiProperty()
+    /**
+    * @example Ford
+    */
     @IsNotEmpty()
     marca: string;
 
-    @ApiProperty()
+    /**
+    * @example Fiesta
+    */
     @IsNotEmpty()
     modelo: string;
 
-    @ApiProperty()
+    /**
+    * @example Branco
+    */
     @IsNotEmpty()
     cor: string;
 
-    @ApiProperty()
+    /**
+    * @example FIZ9999
+    */
     @IsNotEmpty()
     placa: string;
 
-    @ApiProperty({description: "carro ou moto"})
+    /**
+    * Only accepts value carro or moto
+    * @example carro
+    */
     @IsValidVehicleType()
     @IsNotEmpty()
     tipo: string;

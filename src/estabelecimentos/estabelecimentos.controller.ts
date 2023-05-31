@@ -2,8 +2,9 @@ import { Controller, Get, Post, Body, Put, Param, Delete, HttpCode, HttpStatus }
 import { EstabelecimentosService } from './estabelecimentos.service';
 import { CreateEstabelecimentoDto } from './dto/create-estabelecimento.dto';
 import { UpdateEstabelecimentoDto } from './dto/update-estabelecimento.dto';
-import { ApiBearerAuth } from '@nestjs/swagger';
-  
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+ 
+@ApiTags("estabelecimentos")
 @ApiBearerAuth()
 @Controller('estabelecimentos')
 export class EstabelecimentosController {

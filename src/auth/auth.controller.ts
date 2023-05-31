@@ -9,9 +9,10 @@ import {
   } from '@nestjs/common';
   import { AuthService } from './auth.service';
   import { Public } from './decorators/public.decorator';
-  import { ApiBearerAuth } from '@nestjs/swagger';
+  import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
   import { ParamsAuthDto } from './dto/params-auth.dto';
   
+  @ApiTags("auth")
   @ApiBearerAuth()
   @Controller('auth')
   export class AuthController {

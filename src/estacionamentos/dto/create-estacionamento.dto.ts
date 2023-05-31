@@ -2,27 +2,40 @@ import {IsNotEmpty, IsOptional} from "class-validator";
 import { IsValidVehicleType } from "src/helpers/decorators/IsValidVehicleType.decorator";
 import { DeepPartial } from 'typeorm';
 import { VeiculoTipoEnum } from "src/veiculos/dto/veiculo-tipo.dto";
-import { ApiProperty } from "@nestjs/swagger";
+
 export class CreateEstacionamentoDto {
-    @ApiProperty()
+    /**
+    * Only accepts estabelecimentos pre created
+    * @example 1
+    */
     @IsNotEmpty()
     estabelecimento_id: number;
 
-    @ApiProperty()
+    /**
+    * Only accepts veiculos pre created
+    * @example 1
+    */
     @IsNotEmpty()
     veiculo_id: number;
 
-    @ApiProperty({description: "carro ou moto"})
+    /**
+    * Only accepts value carro or moto
+    * @example carro
+    */
     @IsValidVehicleType()
     @IsNotEmpty()
     //tipo: string;
     tipo: DeepPartial<VeiculoTipoEnum>;
 
-    @ApiProperty()
+    /**
+    * @example 2023-01-01 10:01:00
+    */
     @IsNotEmpty()
     entrada: Date;
 
-    @ApiProperty()
+    /**
+    * @example 2023-01-01 10:01:00
+    */
     @IsNotEmpty()
     @IsOptional()
     saida: Date;

@@ -2,10 +2,12 @@ import { Controller, Get, Post, Body, Put, Param, Delete, HttpCode, HttpStatus }
 import { VeiculosService } from './veiculos.service';
 import { CreateVeiculoDto } from './dto/create-veiculo.dto';
 import { UpdateVeiculoDto } from './dto/update-veiculo.dto';
-import { ApiBearerAuth } from '@nestjs/swagger';
-  
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+
+@ApiTags("veículos")
 @ApiBearerAuth()
 @Controller('veiculos')
+
 export class VeiculosController {
   constructor(private readonly veiculosService: VeiculosService) {}
 

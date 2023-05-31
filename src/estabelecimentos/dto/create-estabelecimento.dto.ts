@@ -1,28 +1,42 @@
-import { ApiProperty } from "@nestjs/swagger";
 import {IsNotEmpty, Min} from "class-validator";
 export class CreateEstabelecimentoDto {
-    @ApiProperty()
+    
+    /**
+   * @example SP Parking
+   */
     @IsNotEmpty()
     nome: string;
 
-    @ApiProperty()
+    /**
+   * @example 99.999.999/9999-99
+   */
     @IsNotEmpty()
     cnpj: string;
 
-    @ApiProperty()
+    /**
+   * @example Av abc, 123
+   */
     @IsNotEmpty()
     endereco: string;
 
-    @ApiProperty()
+    /**
+   * @example (99) 99999-9999
+   */
     @IsNotEmpty()
     telefone: string;
 
-    @ApiProperty()
+    /**
+   * only numbers and minumun value 1
+   * @example 1
+   */
     @Min(1)
     @IsNotEmpty()
     vagas_motos: number;
 
-    @ApiProperty()
+    /**
+   * only numbers and minumun value 1
+   * @example 1
+   */
     @Min(1)
     @IsNotEmpty()
     vagas_carros: number;
