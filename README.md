@@ -32,3 +32,5 @@ você receberá um token JWT como resposta
 
 Caso queira alterar alguma configurações da API, edite o arquivo **.env** na raiz do projeto
 
+#### Possíveis problemas
+Caso o container docker apresente algum problema na persistência dos dados do Mysql ou dê algum erro na hora da criação, crie um diretório na raiz do projeto chamado **db**
